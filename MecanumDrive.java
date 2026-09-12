@@ -43,10 +43,10 @@ public class MecanumDrive extends LinearOpMode {
             double frontRightPower = (y - x - rx) / denominator;
             double backRightPower  = (y + x - rx) / denominator;
 
-            frontLeftMotor.setPower(frontLeftPower * 0.5);
-            backLeftMotor.setPower(backLeftPower * 0.5);
-            frontRightMotor.setPower(frontRightPower * 0.5);
-            backRightMotor.setPower(backRightPower * 0.5);
+            frontLeftMotor.setPower(frontLeftPower * 0.66);
+            backLeftMotor.setPower(backLeftPower * 0.66);
+            frontRightMotor.setPower(frontRightPower * 0.66);
+            backRightMotor.setPower(backRightPower * 0.66);
             
             // speed modes left = half speed right = double speed
             if (gamepad1.right_bumper)
