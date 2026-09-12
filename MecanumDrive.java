@@ -59,6 +59,13 @@ public class MecanumDrive extends LinearOpMode {
                 frontRightMotor.setPower(frontRightPower * 0.33);
                 backRightMotor.setPower(backRightPower * 0.33);
             }
+            else if (gamepad1.right_trigger > 0.1)
+            {
+                frontLeftMotor.setPower(frontLeftPower * gamepad1.right_trigger);
+                backLeftMotor.setPower(backLeftPower * gamepad1.right_trigger);
+                frontRightMotor.setPower(frontRightPower * gamepad1.right_trigger);
+                backRightMotor.setPower(backRightPower * gamepad1.right_trigger);
+            }
             else
             {
                 frontLeftMotor.setPower(frontLeftPower * 0.75);
