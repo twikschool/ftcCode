@@ -25,7 +25,7 @@ public class MecanumDrive extends LinearOpMode {
         frontLeftMotor.setDirection(DcMotorSimple.Direction.FORWARD);
         backLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        waitForStart();
+        waitForStart(); // Begins Repeat loop
 
         if (isStopRequested()) return;
 
