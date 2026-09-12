@@ -11,10 +11,10 @@ public class MecanumDrive extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
         // Declare our motors
         // Make sure your ID's match your configuration
-        DcMotor frontLeftMotor  = hardwareMap.dcMotor.get("frontLeftMotor");
-        DcMotor backLeftMotor   = hardwareMap.dcMotor.get("backLeftMotor");
+        DcMotor frontLeftMotor = hardwareMap.dcMotor.get("frontLeftMotor");
+        DcMotor backLeftMotor = hardwareMap.dcMotor.get("backLeftMotor");
         DcMotor frontRightMotor = hardwareMap.dcMotor.get("frontRightMotor");
-        DcMotor backRightMotor  = hardwareMap.dcMotor.get("backRightMotor");
+        DcMotor backRightMotor = hardwareMap.dcMotor.get("backRightMotor");
 
         // Reverse the right side motors. This may be wrong for your setup.
         // If your robot moves backwards when commanded to go forwards,
@@ -38,10 +38,10 @@ public class MecanumDrive extends LinearOpMode {
             // This ensures all the powers maintain the same ratio,
             // but only if at least one is out of the range [-1, 1]
             double denominator = Math.max(Math.abs(y) + Math.abs(x) + Math.abs(rx), 1);
-            double frontLeftPower  = (y + x + rx) / denominator;
-            double backLeftPower   = (y - x + rx) / denominator;
-            double frontRightPower = (y - x - rx) / denominator;
-            double backRightPower  = (y + x - rx) / denominator;
+            double frontLeftPower  = (y - x) / denominator;
+            double backLeftPower   = (y + x) / denominator;
+            double frontRightPower = (y + x) / denominator;
+            double backRightPower  = (y - x) / denominator;
 
             frontLeftMotor.setPower(frontLeftPower);
             backLeftMotor.setPower(backLeftPower);
