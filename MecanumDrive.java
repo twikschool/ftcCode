@@ -27,7 +27,7 @@ public class MecanumDrive extends LinearOpMode {
 
         waitForStart(); // Begins Repeat loop
 
-        if (isStopRequested()) return;
+        if (isStopRequested()) return; // Stops the robot
 
         while (opModeIsActive()) {
             double y  = -gamepad1.left_stick_y; // Remember, Y stick value is reversed
@@ -47,6 +47,7 @@ public class MecanumDrive extends LinearOpMode {
             backLeftMotor.setPower(backLeftPower * 0.5);
             frontRightMotor.setPower(frontRightPower * 0.5);
             backRightMotor.setPower(backRightPower * 0.5);
+            
             // speed modes left = half speed right = double speed
             if (gamepad1.right_bumper)
             {
@@ -55,15 +56,14 @@ public class MecanumDrive extends LinearOpMode {
                 frontRightMotor.setPower(frontRightPower);
                 backRightMotor.setPower(backRightPower);
             }
+            
             if (gamepad1.left_bumper)
             {
                 frontLeftMotor.setPower(frontLeftPower * 0.25);
                 backLeftMotor.setPower(backLeftPower * 0.25);
                 frontRightMotor.setPower(frontRightPower * 0.25);
                 backRightMotor.setPower(backRightPower * 0.25);
-            }
-            // NEW CODE IMPORTANT IGNORE PREVIOUS
-            
+            }            
         }
     }
 }
